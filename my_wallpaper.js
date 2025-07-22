@@ -2,8 +2,10 @@
 let rect_width  = 20;
 let rect_height = 30;
 let cherry_xPos = 100;
-let cherry_yPos = 100;
+let cherry_yPos = 100
 let cherry_Size = 90;
+let cherry_outSize = 105
+//let cherry_highlight = 
 let leafx = 80
 let 
 
@@ -36,17 +38,17 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //cherry outline
   fill(255)
   noStroke(0)
-  circle(cherry_xPos,100,cherry_xPos)
+  circle(cherry_xPos,cherry_yPos,cherry_outSize)
   //cherry main
   fill(255,15,50)
-  circle(cherry_xPos,100,cherry_Size)
+  circle(cherry_xPos,cherry_yPos,cherry_Size)
   //cherry highlight
   fill(255)
   circle(125,80, 15)
-  circle(130,90, 5)
+  circle(125,90, 5)
 
   //cherry leaf
- // triangle(80, 160, 45, 120, 85, 100)
+ // triangle(80, 160, 45, 120, 85, cherry_yPos)
   fill(0,200,150) //teal
   triangle(leafx, 160, 45, 110, leafx, 100)
   
