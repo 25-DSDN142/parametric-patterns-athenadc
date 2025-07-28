@@ -8,7 +8,7 @@ let cherry_outSize = 110;
 let leafx = 80;
 
 
-let arcxPos = 20;
+let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40
 let arcHeight = 80
@@ -45,6 +45,13 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
+  stroke(255)
+  strokeWeight(3)
+  line(1,1, 200,200)
+  line(1,200, 200,1)
+
+  triangle(20,20, 50,50, 80,80)
+
   //cherry white border
   fill(255);
   noStroke(0);
@@ -54,7 +61,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   ellipse(25,32, 28,25);
   square(30,25, 50,20);
-  ellipse(180,120, 28,25);
+  ellipse(180,150, 28,25);
   square(135,100, 50,20);
 
   //if (cherry_Size)
