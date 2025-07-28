@@ -6,10 +6,11 @@ let cherry_yPos = 100
 let cherry_Size = 100;
 let cherry_outSize = 110;
 let leafx = 80;
-let arcyPos = 200
-let arcRotate = 179
-let cherryxHighlight = cherry_xPos+20
-let cherryyHighlight = cherry_yPos-20
+let arcxPos = 25;
+let arcyPos = 200;
+let arcRotate = 179;
+let cherryxHighlight = cherry_xPos+20;
+let cherryyHighlight = cherry_yPos-20;
 let cherryBlue = false;
 
 
@@ -29,6 +30,10 @@ function setup_wallpaper(pWallpaper) {
 
 function wallpaper_background() {
   background(128, 9, 56); //burgundy red
+    if (cherry_Size < 100)
+    background(30,75,255) //royal blue
+    
+  
 
 }
 
@@ -46,10 +51,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
   if (cherryBlue) 
-    fill(0,0,255)
+    fill(30,75,255)
   else 
     fill(255,15,50)
-  
+
+
 
   //cherry main
   //fill(255,15,50)
@@ -65,13 +71,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
   fill(255)
-  arc(25, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(50, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(80, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(110, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(140, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(170, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(200, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+30, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+60, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+90, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+120, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+150, arcyPos, 40, 50, arcRotate, HALF_PI);
+  arc(arcxPos+180, arcyPos, 40, 50, arcRotate, HALF_PI);
 
 
 
