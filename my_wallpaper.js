@@ -4,21 +4,26 @@ let cherry_xPos = 100;
 let cherry_yPos = 100
 let cherry_Size = 100;
 let cherry_outSize = 110;
+
 let leafx = 80;
+
+
 let arcxPos = 20;
 let arcyPos = 200;
 let arcWidth = 40
 let arcHeight = 80
-let arcRotate = 179;
-let cherryxHighlight = cherry_xPos+20;
-let cherryyHighlight = cherry_yPos-20;
+let arcPi = 179;
+
+let cherry_xHighlight = cherry_xPos+20;
+let cherry_yHighlight = cherry_yPos-20;
+let cherry_sizeHighlight = 20
 let cherryBlue = false;
 
 
 
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -39,13 +44,7 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  //rect(40 ,40, rect_width, rect_height);
-  // ellipse(18,32, 28,25);
-  // square(20,20, 50,20);
-  // square(12,20, 20,22)
-
-
-
+  
   //cherry white border
   fill(255);
   noStroke(0);
@@ -53,10 +52,21 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill (255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
+  ellipse(25,32, 28,25);
+  square(30,25, 50,20);
+  ellipse(180,120, 28,25);
+  square(135,100, 50,20);
+
+  //if (cherry_Size)
+
+ if (cherry_Size < 100){
+  cherryBlue = true
+  cherry_outSize = cherry_Size+10
+ }
 
 
   //cherry body
-  //fill(255,15,50)
+  //fill(255,15,50) //cherry red
   if (cherryBlue) 
     fill(30,75,255) //royal blue
   else 
@@ -64,22 +74,31 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(cherry_xPos,cherry_yPos,cherry_Size);
   //cherry highlight
   fill(255)
-  circle(cherryxHighlight,cherryyHighlight, 15);
-  circle(cherryxHighlight+10,cherryyHighlight+10, 5);
+  circle(cherry_xHighlight,cherry_yHighlight, cherry_sizeHighlight);
+  circle(cherry_xHighlight+10,cherry_yHighlight+10, cherry_sizeHighlight-10);
 
   //cherry leaf
-  fill(0,200,150); //mint green
+  fill(02,200,150); //mint green
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
-  //white clouds
-  fill(255)
-  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
-  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
-  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
-  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
-  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
-  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
-  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
+  //green mountains
+  //fill(43, 107, 59)
+
+  if (arcHeight > 80){
+    stroke(1)
+  }
+  if (arcHeight-30){
+    fill(121, 224, 146)
+
+  }
+
+  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
 
 
 }
