@@ -1,13 +1,14 @@
 //your parameter variables go here!
-// let rect_width  = 20;
-// let rect_height = 30;
+
 let cherry_xPos = 100;
 let cherry_yPos = 100
 let cherry_Size = 100;
 let cherry_outSize = 110;
 let leafx = 80;
-let arcxPos = 25;
+let arcxPos = 20;
 let arcyPos = 200;
+let arcWidth = 40
+let arcHeight = 80
 let arcRotate = 179;
 let cherryxHighlight = cherry_xPos+20;
 let cherryyHighlight = cherry_yPos-20;
@@ -45,40 +46,40 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 
 
-  //cherry outline
+  //cherry white border
   fill(255);
   noStroke(0);
+   if (cherry_outSize > 110)
+    fill (255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
+
+
+  //cherry body
+  //fill(255,15,50)
   if (cherryBlue) 
-    fill(30,75,255)
+    fill(30,75,255) //royal blue
   else 
     fill(255,15,50)
-
-
-
-  //cherry main
-  //fill(255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_Size);
   //cherry highlight
   fill(255)
   circle(cherryxHighlight,cherryyHighlight, 15);
-  circle(cherryxHighlight,cherryyHighlight+10, 5);
+  circle(cherryxHighlight+10,cherryyHighlight+10, 5);
 
   //cherry leaf
- // triangle(80, 160, 45, 120, 85, cherry_yPos)
-  fill(0,200,150); //teal
+  fill(0,200,150); //mint green
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
+  //white clouds
   fill(255)
-  arc(arcxPos, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+30, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+60, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+90, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+120, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+150, arcyPos, 40, 50, arcRotate, HALF_PI);
-  arc(arcxPos+180, arcyPos, 40, 50, arcRotate, HALF_PI);
-
+  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
+  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
+  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
+  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
+  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
+  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcRotate, HALF_PI);
+  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcRotate, HALF_PI);
 
 
 }
