@@ -4,6 +4,7 @@ let cherry_xPos = 100;
 let cherry_yPos = 100
 let cherry_Size = 20;
 //if cherry size is set at a value less than 100, the entire design executes the Cherry Blue Variant
+//to turn only cherry blue, go to cherryBlue parameter
 let cherry_outSize = 110;
 
 let arcxPos = 10;
@@ -15,6 +16,8 @@ let arcPi = 179;
 let cherry_xHighlight = cherry_xPos+20;
 let cherry_yHighlight = cherry_yPos-20;
 let cherry_sizeHighlight = 20
+
+let show_Mountains = false;
 
 let cherryBlue = false;
 //changes only the main cherry color (automatically becomes true when the Cherry Blue Variant is on)
@@ -65,6 +68,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill (255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
+  //clouds
   ellipse(35,25, 28,25);
   square(35,25, 50,20);
   ellipse(180,150, 28,25);
@@ -73,6 +77,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //if (cherry_Size)
 
  if (cherry_Size < 100){
+  cherryBlue = true
   cherry_outSize = cherry_Size+10
   fill(30,75,255)
  }
@@ -104,13 +109,18 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   }
 
-  // arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  // arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  // arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  // arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  // arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  // arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  // arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  if(show_Mountains){
+
+  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+
+  }
+  
 
 
 }
