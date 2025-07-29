@@ -15,6 +15,7 @@ let cherry_sizeHighlight = 20
 
 //background motifs
 let diamondStrokeWeight = 5
+let topTriangle = false;
 
 //mountains
 let arcxPos = 10;
@@ -60,16 +61,20 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(50,180, 12)
 
   //diamond
-  stroke(255)
-  strokeWeight(diamondStrokeWeight)
+  stroke(255);
+  strokeWeight(diamondStrokeWeight);
 // if (diamondStrokeWeight > 3)
 //   triangle()
-  line(1,1, 200,200)
-  line(1,200, 200,1)
+  line(1,1, 200,200);
+  line(1,200, 200,1);
 
   //triangle: centre point, lowest point, highest point
-  triangle(80,100, 1,20, 1,180) //left
-  //triangle(100,80, 180,1, 20,1) //top
+  triangle(80,100, 1,20, 1,180); //left
+  
+  if (topTriangle){
+  triangle(100,80, 180,1, 20,1); //top
+  }
+
   // triangle(80,100, 1,20, 1,180) //right
   // triangle(80,100, 1,20, 1,180) //bottom
 
@@ -89,8 +94,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  //Cherry Blue Variant
   if (cherry_Size < 100){
   cherryBlue = true
-  // cherry_outSize = cherry_Size+10
-  //fill(30,75,255)
  }
 
  //Cherry Pink Variant
@@ -103,14 +106,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   if (cherryBlue) {
     fill(30,75,255) //royal blue
   } else if (cherryPink) {
-    fill(245, 100, 197) //bubblegum pink
+    fill(245, 100, 197); //bubblegum pink
   } else {
-    fill(255,15,50) //cherry red
+    fill(255,15,50); //cherry red
   }
+    circle(cherry_xPos,cherry_yPos,cherry_Size);
 
 
-  circle(cherry_xPos,cherry_yPos,cherry_Size);
-  
   //cherry highlight
   fill(255)
   circle(cherry_xHighlight,cherry_yHighlight, cherry_sizeHighlight); //big highlight
@@ -121,16 +123,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
 
-
-  
   //mountains
-    fill(43, 107, 59) //forest green
+    fill(43, 107, 59); //forest green
 
     if (arcHeight > 80){
-      stroke(1)
+      stroke(1);
     }
     if (arcHeight-30){
-      fill(121, 224, 146)
+      fill(121, 224, 146);
     }
 
     if(show_Mountains){
