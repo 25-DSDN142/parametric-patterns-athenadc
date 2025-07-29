@@ -5,9 +5,6 @@ let cherry_yPos = 100
 let cherry_Size = 100;
 let cherry_outSize = 110;
 
-let leafx = 80;
-
-
 let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40
@@ -22,8 +19,8 @@ let cherryBlue = false;
 
 
 function setup_wallpaper(pWallpaper) {
- // pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+ pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -54,9 +51,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   //triangle: centre point, lowest point, highest point
   triangle(80,100, 1,20, 1,180) //left
-  //triangle(100,80, 180,1, 20,1) //top
-  triangle(80,100, 1,20, 1,180) //right
-  triangle(80,100, 1,20, 1,180) //bottom
+  // triangle(100,80, 180,1, 20,1) //top
+  // triangle(80,100, 1,20, 1,180) //right
+  // triangle(80,100, 1,20, 1,180) //bottom
 
   //cherry white border
   fill(255);
@@ -94,7 +91,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
   //green mountains
-  //fill(43, 107, 59)
+  fill(43, 107, 59)
 
   if (arcHeight > 80){
     stroke(1)
