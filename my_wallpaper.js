@@ -22,7 +22,7 @@ let arcyPos = 200;
 let arcWidth = 40
 let arcHeight = 80
 let arcPi = 179;
-let show_Mountains = true;
+let show_Mountains = false;
 
 //color parameters
 let cherryBlue = false;
@@ -90,7 +90,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   if (cherry_Size < 100){
   cherryBlue = true
   // cherry_outSize = cherry_Size+10
-  fill(30,75,255)
+  //fill(30,75,255)
  }
 
  //Cherry Pink Variant
@@ -100,13 +100,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  }
 
   //cherry body
-  if (cherryBlue) 
+  if (cherryBlue) {
     fill(30,75,255) //royal blue
-  else 
+  } else if (cherryPink) {
+    fill(245, 100, 197) //bubblegum pink
+  } else {
     fill(255,15,50) //cherry red
+  }
 
-  if (cherryPink)
-      fill(245, 100, 197) //bubblegum pink
 
   circle(cherry_xPos,cherry_yPos,cherry_Size);
   
