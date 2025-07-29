@@ -22,8 +22,8 @@ let cherryBlue = false;
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+ // pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -37,7 +37,7 @@ function setup_wallpaper(pWallpaper) {
 function wallpaper_background() {
   background(128, 9, 56); //burgundy red
     if (cherry_Size < 100)
-    background(30,75,255) //royal blue
+    background(60,80,250) //royal blue
     
   
 
@@ -45,12 +45,18 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
+  
+
   stroke(255)
   strokeWeight(3)
   line(1,1, 200,200)
   line(1,200, 200,1)
 
-  triangle(20,20, 50,50, 80,80)
+  //triangle: centre point, lowest point, highest point
+  triangle(80,100, 1,20, 1,180) //left
+  //triangle(100,80, 180,1, 20,1) //top
+  triangle(80,100, 1,20, 1,180) //right
+  triangle(80,100, 1,20, 1,180) //bottom
 
   //cherry white border
   fill(255);
@@ -59,8 +65,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill (255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
-  ellipse(25,32, 28,25);
-  square(30,25, 50,20);
+  ellipse(35,25, 28,25);
+  square(35,25, 50,20);
   ellipse(180,150, 28,25);
   square(135,100, 50,20);
 
@@ -70,7 +76,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   cherryBlue = true
   cherry_outSize = cherry_Size+10
  }
-
 
   //cherry body
   //fill(255,15,50) //cherry red
@@ -99,13 +104,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   }
 
-  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  // arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  // arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  // arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  // arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  // arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+  // arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+  // arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
 
 
 }
