@@ -1,6 +1,5 @@
 //your parameter variables go here!
 
-// translate 
 
 //cherry
 let cherry_xPos = 100;
@@ -14,13 +13,16 @@ let cherry_xHighlight = cherry_xPos+20;
 let cherry_yHighlight = cherry_yPos-20;
 let cherry_sizeHighlight = 20
 
+//background motifs
+let diamondStrokeWeight = 5
+
 //mountains
 let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40
 let arcHeight = 80
 let arcPi = 179;
-let show_Mountains = false;
+let show_Mountains = true;
 
 //color parameters
 let cherryBlue = false;
@@ -53,17 +55,21 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  translate(cherry_xPos, cherry_yPos)
   
+
+  circle(50,180, 12)
+
   //diamond
   stroke(255)
-  strokeWeight(3)
+  strokeWeight(diamondStrokeWeight)
+// if (diamondStrokeWeight > 3)
+//   triangle()
   line(1,1, 200,200)
   line(1,200, 200,1)
 
   //triangle: centre point, lowest point, highest point
   triangle(80,100, 1,20, 1,180) //left
-  // triangle(100,80, 180,1, 20,1) //top
+  //triangle(100,80, 180,1, 20,1) //top
   // triangle(80,100, 1,20, 1,180) //right
   // triangle(80,100, 1,20, 1,180) //bottom
 
@@ -72,8 +78,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   square(35,25, 50,20);
   ellipse(180,150, 28,25);
   square(135,100, 50,20);
-
- 
 
   //cherry white border
   fill(255);
@@ -115,28 +119,28 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(02,200,150); //mint green
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
-translate(-cherry_xPos, -cherry_yPos)
 
-}
+
   
-//mountains
-  fill(43, 107, 59) //forest green
+  //mountains
+    fill(43, 107, 59) //forest green
 
-  if (arcHeight > 80){
-    stroke(1)
+    if (arcHeight > 80){
+      stroke(1)
+    }
+    if (arcHeight-30){
+      fill(121, 224, 146)
+    }
+
+    if(show_Mountains){
+    arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+    arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+    arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+    arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+    arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+    arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
+    arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
+
+
   }
-  if (arcHeight-30){
-    fill(121, 224, 146)
-  }
-
-  if(show_Mountains){
-  arc(arcxPos, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+30, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+60, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+90, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+120, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-  arc(arcxPos+150, arcyPos, arcWidth, arcHeight-30, arcPi, HALF_PI);
-  arc(arcxPos+180, arcyPos, arcWidth, arcHeight, arcPi, HALF_PI);
-
-
 }
