@@ -2,7 +2,8 @@
 
 let cherry_xPos = 100;
 let cherry_yPos = 100
-let cherry_Size = 100;
+let cherry_Size = 20;
+//if cherry size is set at a value less than 100, the entire design executes the Cherry Blue Variant
 let cherry_outSize = 110;
 
 let arcxPos = 10;
@@ -13,8 +14,10 @@ let arcPi = 179;
 
 let cherry_xHighlight = cherry_xPos+20;
 let cherry_yHighlight = cherry_yPos-20;
-let cherry_sizeHighlight = 20
+let cherry_sizeHighlight = 0
+
 let cherryBlue = false;
+//change t
 
 
 
@@ -83,8 +86,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(cherry_xPos,cherry_yPos,cherry_Size);
   //cherry highlight
   fill(255)
-  circle(cherry_xHighlight,cherry_yHighlight, cherry_sizeHighlight);
-  circle(cherry_xHighlight+10,cherry_yHighlight+10, cherry_sizeHighlight-10);
+  circle(cherry_xHighlight-10,cherry_yHighlight-10, cherry_sizeHighlight);
+  circle(cherry_xHighlight,cherry_yHighlight, cherry_sizeHighlight-10);
 
   //cherry leaf
   fill(02,200,150); //mint green
