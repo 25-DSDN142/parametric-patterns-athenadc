@@ -14,10 +14,10 @@ let arcPi = 179;
 
 let cherry_xHighlight = cherry_xPos+20;
 let cherry_yHighlight = cherry_yPos-20;
-let cherry_sizeHighlight = 0
+let cherry_sizeHighlight = 20
 
 let cherryBlue = false;
-//change t
+//changes only the main cherry color (automatically becomes true when the Cherry Blue Variant is on)
 
 
 
@@ -73,8 +73,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //if (cherry_Size)
 
  if (cherry_Size < 100){
-  cherryBlue = true
   cherry_outSize = cherry_Size+10
+  fill(30,75,255)
  }
 
   //cherry body
