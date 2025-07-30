@@ -21,7 +21,7 @@ let topTriangle = false;
 let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40
-let arcHeight = 80
+let arcHeight = 100
 let arcPi = 179;
 let show_Mountains = false;
 
@@ -128,6 +128,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
     if (arcHeight > 80){
       stroke(1);
+      strokeWeight(2);
     }
     if (arcHeight-30){
       fill(121, 224, 146);
