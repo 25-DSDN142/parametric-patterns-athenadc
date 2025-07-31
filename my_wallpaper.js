@@ -15,8 +15,8 @@ let cherry_sizeHighlight = 20 //og:20
 
 //background motifs
 let diamondStrokeWeight = 5 //og:5
-let topTriangle = false; //og: false
-let showDiamond = true //og: true
+//let topTriangle = false; //og: false
+let showDiamond = false //og: true
 
 //mountains
 let show_Mountains =false;
@@ -79,15 +79,14 @@ noStroke(0);
   line(1,200, 200,1);
 
   //triangle: centre point, lowest point, highest point
-  if (showdiamond = false){
-  noFill(0)
-  noStroke(0)
-  }
+  fill(255)
   triangle(80,100, 1,20, 1,180); //left
-  
-  if (topTriangle){
-  triangle(100,80, 180,1, 20,1); //top
+  if (showDiamond = false){
+    fill(255)
+
   }
+  
+  //triangle(100,80, 180,1, 20,1); //top
 
   // triangle(80,100, 1,20, 1,180) //right
   // triangle(80,100, 1,20, 1,180) //bottom
