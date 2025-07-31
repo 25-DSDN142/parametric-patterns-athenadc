@@ -8,22 +8,23 @@ let cherry_Size = 100;
 //if cherry size is set at a value LESS than 100, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 100, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
-let cherry_outSize = cherry_Size+10;
-let cherry_xHighlight = cherry_xPos+20;
-let cherry_yHighlight = cherry_yPos-20;
-let cherry_sizeHighlight = 20
+let cherry_outSize = cherry_Size+10; //og:10
+let cherry_xHighlight = cherry_xPos+20; //og:20
+let cherry_yHighlight = cherry_yPos-20; //og:20
+let cherry_sizeHighlight = 20 //og:20
 
 //background motifs
-let diamondStrokeWeight = 5
-let topTriangle = false;
+let diamondStrokeWeight = 5 //og:5
+let topTriangle = false; //og: false
+let showDiamond = true //og: true
 
 //mountains
+let show_Mountains =false;
 let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40
 let arcHeight = 100
 let arcPi = 179;
-let show_Mountains = false;
 
 //color parameters
 let cherryBlue = false;
@@ -58,17 +59,30 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
 
-  circle(50,180, 12)
+noStroke(0);
+ fill(156, 26, 78);
+  circle(150,130, 125);
+
+   //clouds
+   fill(255);
+  ellipse(35,25, 28,25);
+  square(35,25, 50,20);
+  ellipse(180,150, 28,25);
+  square(135,100, 50,20);
 
   //diamond
-  stroke(255);
+  if (showDiamond){
+    stroke(255);
+  }
   strokeWeight(diamondStrokeWeight);
-// if (diamondStrokeWeight > 3)
-//   triangle()
   line(1,1, 200,200);
   line(1,200, 200,1);
 
   //triangle: centre point, lowest point, highest point
+  if (showdiamond = false){
+  noFill(0)
+  noStroke(0)
+  }
   triangle(80,100, 1,20, 1,180); //left
   
   if (topTriangle){
@@ -78,17 +92,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // triangle(80,100, 1,20, 1,180) //right
   // triangle(80,100, 1,20, 1,180) //bottom
 
-   //clouds
-  ellipse(35,25, 28,25);
-  square(35,25, 50,20);
-  ellipse(180,150, 28,25);
-  square(135,100, 50,20);
-
   //cherry white border
   fill(255);
   noStroke(0);
-  //  if (cherry_outSize > 110)
-  //   fill (255,15,50)
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
  //Cherry Blue Variant
@@ -99,7 +105,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  //Cherry Pink Variant
  if (cherry_Size > 100){
   cherryPink = true
-
  }
 
   //cherry body
@@ -127,7 +132,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill(43, 107, 59); //forest green
 
     if (arcHeight > 80){
-      stroke(1);
+      stroke(255);
       strokeWeight(2);
     }
     if (arcHeight-30){
