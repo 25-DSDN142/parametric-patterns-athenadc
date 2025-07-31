@@ -14,9 +14,9 @@ let cherry_yHighlight = cherry_yPos-20; //og:20
 let cherry_sizeHighlight = 20 //og:20
 
 //background motifs
+let showDiamond = true //og: true
 let diamondStrokeWeight = 5 //og:5
 //let topTriangle = false; //og: false
-let showDiamond = false //og: true
 
 //mountains
 let show_Mountains =false;
@@ -59,7 +59,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
 
-noStroke(0);
+ noStroke(0);
  fill(156, 26, 78);
   circle(150,130, 125);
 
@@ -73,15 +73,16 @@ noStroke(0);
   //diamond
   if (showDiamond){
     stroke(255);
+    strokeWeight(diamondStrokeWeight);
+    line(1,1, 200,200);
+    line(1,200, 200,1);
   }
-  strokeWeight(diamondStrokeWeight);
-  line(1,1, 200,200);
-  line(1,200, 200,1);
+  
 
   //triangle: centre point, lowest point, highest point
   fill(255)
   triangle(80,100, 1,20, 1,180); //left
-  if (showDiamond = false){
+  if (!showDiamond){
     fill(255)
 
   }
