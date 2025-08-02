@@ -144,7 +144,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(cherry_xHighlight+10,cherry_yHighlight+10, cherry_sizeHighlight-10); //small highlight
 
   //cherry leaf
-  fill(02,200,150); //mint green
+  fill(2,200,150); //mint green
   triangle(cherry_xPos-20, cherry_yPos+60, cherry_xPos-60, cherry_yPos+20, cherry_xPos-20, cherry_yPos);
 
 
