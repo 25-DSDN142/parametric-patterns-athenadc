@@ -4,14 +4,14 @@
 //cherry
 let cherry_xPos = 100; //moves cherry by the x axis
 let cherry_yPos = 100; //moves cherry by the y axis
-let cherry_Size = 100; //changes cherry size
+let cherry_Size = 45; //changes cherry size
 //if cherry size is set at a value LESS than 50, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 120, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
 let cherry_outSize = cherry_Size+10; //increase or decrease the white outline of the cherry based on cherry_Size
-let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
-let cherry_yHighlight = cherry_yPos-20; //attaches the highlight on the cherry
-let cherry_sizeHighlight = cherry_Size-80; //increases or decreases highlight base on the cherry_Size.
+let cherry_xHighlight = cherry_xPos+1; //attaches the highlight on the cherry
+let cherry_yHighlight = cherry_yPos-10; //attaches the highlight on the cherry
+let cherry_sizeHighlight = cherry_Size-30; //increases or decreases highlight base on the cherry_Size.
 
 //background motifs
 let showDiamond = false; //diamond motif appears
@@ -24,10 +24,11 @@ let leftTriangle = false; //displays the left triangle
 let rightTriangle = false; //displays the right triangle
 
 //clouds
-let cloudSize = 50;
+let showCloud = false;
+let cloudSize = 80;
 let showOutline = true; //displays cloud outlines
-let cloudOutline = 255; //changes outline colour between black and white
-let cloudColour = [148, 189, 255]; //RGB values; use Google Color Picker :)
+let cloudOutline = 5; //changes outline colour between black and white
+let cloudColour = [100, 0, 0]; //RGB values; use Google Color Picker :)
 
 //mountains
 let show_Mountains = false; //displays mountains
@@ -78,7 +79,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    circle(150,130, 125);
  
  //clouds
-   fill(cloudColour);
+  if (showCloud){
+fill(cloudColour);
    noStroke(0);
 
    if (showOutline){
@@ -87,8 +89,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
    ellipse(35,25, cloudSize-22,25); //high clouds
    square(35,25, cloudSize,20); //high clouds
-   ellipse(180,150, cloudSize-22,25); //low clouds
+   ellipse(130,150, cloudSize-22,25); //low clouds
    square(135,100, cloudSize,20); //low clouds
+  }
+   
 
   //diamond
   if (showDiamond){
@@ -118,12 +122,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(cherry_xPos,cherry_yPos,cherry_outSize);
 
  //Cherry Blue Variant
-  if (cherry_Size < 100){
+  if (cherry_Size < 50){
    cherryBlue = true;
   }
 
  //Cherry Pink Variant
-  if (cherry_Size > 100){
+  if (cherry_Size > 120){
    cherryPink = true;
   }
 
