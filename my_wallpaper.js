@@ -4,34 +4,34 @@
 //cherry
 let cherry_xPos = 100; //moves cherry by the x axis
 let cherry_yPos = 100; //moves cherry by the y axis
-let cherry_Size = 45; //changes cherry size
+let cherry_Size = 50; //changes cherry size
 //if cherry size is set at a value LESS than 50, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 120, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
-let cherry_outSize = cherry_Size+10; //increase or decrease the white outline of the cherry based on cherry_Size
-let cherry_xHighlight = cherry_xPos+1; //attaches the highlight on the cherry
-let cherry_yHighlight = cherry_yPos-10; //attaches the highlight on the cherry
-let cherry_sizeHighlight = cherry_Size-30; //increases or decreases highlight base on the cherry_Size.
+let cherry_outSize = cherry_Size+50; //increase or decrease the white outline of the cherry based on cherry_Size
+let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
+let cherry_yHighlight = cherry_yPos-100; //attaches the highlight on the cherry
+let cherry_sizeHighlight = cherry_Size-80; //increases or decreases highlight base on the cherry_Size.
 
 //background motifs
-let showDiamond = false; //diamond motif appears
+let showDiamond = true; //diamond motif appears
 let diamondStrokeWeight = 5; //thicker diamond lines
 //diamond lines makes up the diamond motif.
 let diamond1Line = 1;
 let diamond2Line = 200;
 //these two triangles can be added if suited.
-let leftTriangle = false; //displays the left triangle
-let rightTriangle = false; //displays the right triangle
+let leftTriangle = true; //displays the left triangle
+let rightTriangle = true; //displays the right triangle
 
 //clouds
 let showCloud = false;
-let cloudSize = 80;
-let showOutline = true; //displays cloud outlines
-let cloudOutline = 5; //changes outline colour between black and white
-let cloudColour = [100, 0, 0]; //RGB values; use Google Color Picker :)
+let cloudSize = 200;
+let showOutline = false; //displays cloud outlines
+let cloudOutline = 255; //changes outline colour between black and white
+let cloudColour = [20, 100, 180]; //RGB values; use Google Color Picker :)
 
 //mountains
-let show_Mountains = false; //displays mountains
+let show_Mountains = true; //displays mountains
 let noOutline = true; //displays mountain outline
 let outlineWeight = 5; //thickness of outlines
 let outlineColour = 255; // between black and white
@@ -65,7 +65,7 @@ function wallpaper_background() {
     if (cherry_Size < 50)
     background(60,80,250) //royal blue
   if (cherry_Size > 120)
-    background(245, 100, 197);
+    background(245, 100, 197); //bubblegum pink
     
 
 }
@@ -74,9 +74,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
 
  //background circle 
-   noStroke(0);
+noStroke(0);
    fill(156, 26, 78);
    circle(150,130, 125);
+   
  
  //clouds
   if (showCloud){
@@ -153,7 +154,7 @@ fill(cloudColour);
 
 
   //mountains
-  fill(43, 107, 59); //forest green
+  fill(43, 107, 59); //light green
 
   if (noOutline){
     stroke(outlineColour);
