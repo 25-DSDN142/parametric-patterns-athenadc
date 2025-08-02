@@ -2,26 +2,34 @@
 
 
 //cherry
-let cherry_xPos = 100;
-let cherry_yPos = 100;
-let cherry_Size = 100;
+let cherry_xPos = 100; //moves cherry by the x axis
+let cherry_yPos = 100; //moves cherry by the y axis
+let cherry_Size = 100; //changes cherry size
 //if cherry size is set at a value LESS than 100, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 100, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
-let cherry_outSize = cherry_Size+10; //og:10
-let cherry_xHighlight = cherry_xPos+20; //og:20
-let cherry_yHighlight = cherry_yPos-20; //og:20
-let cherry_sizeHighlight = 20; //og:20
+let cherry_outSize = cherry_Size+10; //increase or decrease the white outline of the cherry based on cherry_Size
+let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
+let cherry_yHighlight = cherry_yPos-20; //attaches the highlight on the cherry
+let cherry_sizeHighlight = cherry_Size-80; //increases or decreases highlight base on the cherry_Size
 
 //background motifs
-let showDiamond = true; //og: true
-let diamondStrokeWeight = 5; //og:5
+let showDiamond = true; //diamond motif appears
+let diamondStrokeWeight = 5; //thicker diamond lines
+//diamond lines makes up the diamond motif
 let diamond1Line = 1;
 let diamond2Line = 200;
 
+//clouds
+let showOutline = true; //displays cloud outlines
+let cloudOutline = 255; //changes outline colour between black and white
+let cloudColour = [52, 232, 235]; //RGB values; use Google Color Picker :)
+
 //mountains
-let show_Mountains = false;
-let noOutline = true;
+let show_Mountains = true; //displays mountains
+let noOutline = true; //displays mountain outline
+let outlineWeight = 5 //thickness of outlines
+let outlineColour = 255 // between black and white
 let arcxPos = 10;
 let arcyPos = 200;
 let arcWidth = 40;
@@ -29,9 +37,8 @@ let arcHeight = 100;
 let arcPi = 179;
 
 //color parameters
-let cherryBlue = false;
-let cherryPink = false;
-//changes only the main cherry color (automatically becomes true when either varients are running).
+let cherryBlue = false; //changes only the main cherry color (overridden when either varients are running).
+let cherryPink = false; //changes only the main cherry color (overridden when either varients are running).
 
 
 
@@ -50,9 +57,9 @@ pWallpaper.output_mode(GRID_WALLPAPER);
 
 function wallpaper_background() {
   background(128, 9, 56); //burgundy red
-    if (cherry_Size < 90)
+    if (cherry_Size < 50)
     background(60,80,250) //royal blue
-  if (cherry_Size > 110)
+  if (cherry_Size > 120)
     background(245, 100, 197);
     
 
@@ -66,8 +73,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 //   circle(150,130, 125);
 
    //clouds
-   fill(255);
+   fill(cloudColour);
    noStroke(0);
+   
+
+   if (showOutline){
+    stroke(cloudOutline);
+   }
+
   ellipse(35,25, 28,25);
   square(35,25, 50,20);
   ellipse(180,150, 28,25);
@@ -86,11 +99,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   stroke(255);
   fill(255)
   triangle(80,100, 1,20, 1,180); //left
-  //triangle(100,80, 180,1, 20,1); //top
+  //triangle(100,80, 180,1, 20,1); //right
   if (!showDiamond){
     noFill(0);
   }
-  
   
 
   //cherry white border
@@ -133,8 +145,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill(43, 107, 59); //forest green
 
     if (noOutline){
-      stroke(255);
-      strokeWeight(2);
+      stroke(outlineColour);
+      strokeWeight(outlineWeight);
     }
 
     if (arcHeight-30){
