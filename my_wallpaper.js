@@ -2,44 +2,44 @@
 
 
 //cherry
-let cherry_xPos = 100; //moves cherry by the x axis
+let cherry_xPos = 110; //moves cherry by the x axis
 let cherry_yPos = 100; //moves cherry by the y axis
-let cherry_Size = 50; //changes cherry size
+let cherry_Size = 140; //changes cherry size
 //if cherry size is set at a value LESS than 50, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 120, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
-let cherry_outSize = cherry_Size+50; //increase or decrease the white outline of the cherry based on cherry_Size
-let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
-let cherry_yHighlight = cherry_yPos-100; //attaches the highlight on the cherry
+let cherry_outSize = cherry_Size+100; //increase or decrease the white outline of the cherry based on cherry_Size
+let cherry_xHighlight = cherry_xPos+1; //attaches the highlight on the cherry
+let cherry_yHighlight = cherry_yPos-1; //attaches the highlight on the cherry
 let cherry_sizeHighlight = cherry_Size-80; //increases or decreases highlight base on the cherry_Size.
 
 //background motifs
-let showDiamond = true; //diamond motif appears
+let showDiamond = false; //diamond motif appears
 let diamondStrokeWeight = 5; //thicker diamond lines
 //diamond lines makes up the diamond motif.
 let diamond1Line = 1;
 let diamond2Line = 200;
 //these two triangles can be added if suited.
-let leftTriangle = true; //displays the left triangle
-let rightTriangle = true; //displays the right triangle
+let leftTriangle = false; //displays the left triangle
+let rightTriangle = false; //displays the right triangle
 
 //clouds
-let showCloud = false;
-let cloudSize = 200;
-let showOutline = false; //displays cloud outlines
+let showCloud = true;
+let cloudSize = 400;
+let showOutline = true; //displays cloud outlines
 let cloudOutline = 255; //changes outline colour between black and white
-let cloudColour = [20, 100, 180]; //RGB values; use Google Color Picker :)
+let cloudColour = [20, 100, 200]; //RGB values; use Google Color Picker :)
 
 //mountains
-let show_Mountains = true; //displays mountains
+let show_Mountains = false; //displays mountains
 let noOutline = true; //displays mountain outline
 let outlineWeight = 5; //thickness of outlines
-let outlineColour = 255; // between black and white
+let outlineColour = 5; // between black and white
 let arcxPos = 10;
-let arcyPos = 200;
-let arcWidth = 40;
-let arcHeight = 100;
-let arcPi = 179;
+let arcyPos = 300;
+let arcWidth = 80;
+let arcHeight = 150;
+let arcPi = 10;
 
 //color parameters
 let cherryBlue = false; //changes only the main cherry color (overridden when either varients are running).
