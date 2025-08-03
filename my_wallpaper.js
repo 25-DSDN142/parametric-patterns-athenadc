@@ -2,23 +2,23 @@
 
 
 //cherry
-let cherry_xPos = 160; //moves cherry by the x axis
-let cherry_yPos = 105; //moves cherry by the y axis
+let cherry_xPos = 140; //moves cherry by the x axis
+let cherry_yPos = 100; //moves cherry by the y axis
 let cherry_Size = 115; //changes cherry size
 //if cherry size is set at a value LESS than 50, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 120, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
-let cherry_outSize = cherry_Size+100; //increase or decrease the white outline of the cherry based on cherry_Size
+let cherry_outSize = cherry_Size+50; //increase or decrease the white outline of the cherry based on cherry_Size
 let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
 let cherry_yHighlight = cherry_yPos-25; //attaches the highlight on the cherry
 let cherry_sizeHighlight = cherry_Size-90; //increases or decreases highlight base on the cherry_Size.
 
 //background motifs
-let showDiamond = true; //diamond motif appears
+let showDiamond = false; //diamond motif appears
 let diamondStrokeWeight = 5; //changes thickness of diamond lines
 //diamond lines makes up the diamond motif.
-let diamond1Line = 1;
-let diamond2Line = 200;
+let diamond1Line = 40;
+let diamond2Line = 240;
 //these two triangles can be added if suited.
 let leftTriangle = true; //displays the left triangle
 let rightTriangle = true; //displays the right triangle
