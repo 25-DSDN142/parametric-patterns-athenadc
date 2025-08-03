@@ -2,30 +2,30 @@
 
 
 //cherry
-let cherry_xPos = 110; //moves cherry by the x axis
-let cherry_yPos = 100; //moves cherry by the y axis
-let cherry_Size = 140; //changes cherry size
+let cherry_xPos = 160; //moves cherry by the x axis
+let cherry_yPos = 105; //moves cherry by the y axis
+let cherry_Size = 115; //changes cherry size
 //if cherry size is set at a value LESS than 50, the entire design executes the Cherry Blue Variant.
 //if cherry size is set at a value MORE than 120, the entire design executes the Cherry Pink Variant.
 //to change the cherry only, change color parameters below.
 let cherry_outSize = cherry_Size+100; //increase or decrease the white outline of the cherry based on cherry_Size
-let cherry_xHighlight = cherry_xPos+1; //attaches the highlight on the cherry
-let cherry_yHighlight = cherry_yPos-1; //attaches the highlight on the cherry
-let cherry_sizeHighlight = cherry_Size-80; //increases or decreases highlight base on the cherry_Size.
+let cherry_xHighlight = cherry_xPos+20; //attaches the highlight on the cherry
+let cherry_yHighlight = cherry_yPos-25; //attaches the highlight on the cherry
+let cherry_sizeHighlight = cherry_Size-90; //increases or decreases highlight base on the cherry_Size.
 
 //background motifs
-let showDiamond = false; //diamond motif appears
-let diamondStrokeWeight = 5; //thicker diamond lines
+let showDiamond = true; //diamond motif appears
+let diamondStrokeWeight = 5; //changes thickness of diamond lines
 //diamond lines makes up the diamond motif.
 let diamond1Line = 1;
 let diamond2Line = 200;
 //these two triangles can be added if suited.
-let leftTriangle = false; //displays the left triangle
-let rightTriangle = false; //displays the right triangle
+let leftTriangle = true; //displays the left triangle
+let rightTriangle = true; //displays the right triangle
 
 //clouds
-let showCloud = true;
-let cloudSize = 400;
+let showCloud = false; //displays clouds
+let cloudSize = 400; //changes cloud size
 let showOutline = true; //displays cloud outlines
 let cloudOutline = 255; //changes outline colour between black and white
 let cloudColour = [20, 100, 200]; //RGB values; use Google Color Picker :)
@@ -49,7 +49,7 @@ let cherryPink = false; //changes only the main cherry color (overridden when ei
 
 function setup_wallpaper(pWallpaper) {
 //pWallpaper.output_mode(DEVELOP_GLYPH);
-pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.output_mode(GLIDE_WALLPAPER);
   
   pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
